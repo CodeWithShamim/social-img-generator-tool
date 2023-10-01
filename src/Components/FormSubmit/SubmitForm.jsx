@@ -112,7 +112,7 @@ const SubmitForm = (props) => {
               <TextInput
                 onChange={(e) => setDaysAgo(e.target.value)}
                 value={daysAgo}
-                type="date"
+                type="text"
                 placeholder="Days ago"
               />
 
