@@ -1,11 +1,9 @@
 import React from "react";
 import "./Card.css";
-import { getTimeAgo } from "../../utils/time";
-import ReactEffect from "../ReactEffect/ReactEffect";
 
 export default function Card({ item }) {
-  console.log([item]);
-  const { img, name, comment, daysAgo } = item;
+  const { img, name, comment, daysAgo, likeCounter, reacts } = item;
+
   return (
     <div className="cardContainer">
       <img className="cardImg" src={img} alt={name} />
@@ -14,12 +12,22 @@ export default function Card({ item }) {
         <h3 className="cardName">{name}</h3>
         <p className="cardComment">{comment}</p>
         <div className="cardBottomItem">
-          <h6>{getTimeAgo(daysAgo)}</h6>
+          <h6>{daysAgo} days ago</h6>
+          <h6>{likeCounter} likes</h6>
 
-          <ReactEffect>
-            <button className="cardLikeBtn">like</button>
-          </ReactEffect>
+          <div className="reactImgContainer">
+            {reacts.map((react, index) => (
+              <div key={index}>
+                <img
+                  className="reactImg"
+                  src={require(`../../assets/${react}.png`)}
+                  alt={react}
+                />
+              </div>
+            ))}
+          </div>
         </div>
+        <button></button>
       </div>
     </div>
   );

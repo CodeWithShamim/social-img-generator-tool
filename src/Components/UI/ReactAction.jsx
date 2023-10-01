@@ -48,7 +48,7 @@ const ReactAction = (props) => {
           style={{ background: `${heartState ? "#48abe0" : ""}` }}
           type="button"
         >
-          <img src={require("../../assets/heart.png")} alt="" />
+          <img src={require("../../assets/love.png")} alt="" />
         </button>
         <button
           onClick={wowButtonHandler}

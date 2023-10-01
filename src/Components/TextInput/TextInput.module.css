@@ -5,7 +5,7 @@ label {
     color: #333;
 }
 
-input[type="text"] {
+input {
     width: 80%;
     padding: 5px;
     margin-bottom: 15px solid rgb(230, 227, 227);
@@ -16,7 +16,7 @@ input[type="text"] {
 }
 
 
-input {
+/* input {
     width: 80%;
     padding: 5px;
     margin-bottom: 15px solid green;
@@ -27,16 +27,16 @@ input {
     border-radius: 4px;
     font-size: 16px;
     outline: none;
-}
+} */
 
-input[type="text"]::placeholder {
+input::placeholder {
     color: #ccc;
     padding: 2px;
     font-size: small;
     font-family: cursive;
 }
 
-input[type="text"]:focus {
+input:focus {
     border-color: #007bff;
     /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
 }

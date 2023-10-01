@@ -6,16 +6,17 @@ import ReactAction from "../UI/ReactAction";
 import TextInput from "../TextInput";
 import Button from "../Button/Button";
 import ReactEffect from "../ReactEffect/ReactEffect";
+import { useMyContext } from "../../hooks/Context/Context";
 
 const SubmitForm = (props) => {
   const [file, setFile] = useState();
   // const [modalState, setModalState] = useState(false);
-  const [reacts, setReacts] = useState({});
 
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [likeCounter, setLikeCounter] = useState("");
   const [daysAgo, setDaysAgo] = useState("");
+  const { resetReactsValue, getReactsValue } = useMyContext();
 
   const fileRef = useRef();
 
@@ -34,6 +35,13 @@ const SubmitForm = (props) => {
   //   setReacts({ ...react });
   // };
 
+  // const onChangeReact = (react) => {
+  //   if (react != null && !reacts.includes(react)) {
+  //     console.log(!reacts.includes(react));
+  //     setReacts([...reacts, react]);
+  //   }
+  // };
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -42,21 +50,27 @@ const SubmitForm = (props) => {
       return;
     }
 
+    if (getReactsValue()?.length < 1) {
+      alert("please add reaction!");
+      return;
+    }
+
     const input = {
       img: file,
       name,
       comment,
-      daysAgo: new Date(),
+      daysAgo,
       likeCounter,
-      ...reacts,
+      reacts: getReactsValue(),
     };
     props.userInput(input);
     fileRef.current.value = null;
+    resetReactsValue();
     setFile("");
     setName("");
     setComment("");
     setLikeCounter("");
-    // setDaysAgo("");
+    setDaysAgo("");
   };
 
   return (
@@ -107,12 +121,13 @@ const SubmitForm = (props) => {
                 onChange={(e) => setLikeCounter(e.target.value)}
                 value={likeCounter}
                 placeholder="Total likes"
+                type="number"
               />
 
               <TextInput
                 onChange={(e) => setDaysAgo(e.target.value)}
                 value={daysAgo}
-                type="date"
+                type="text"
                 placeholder="Days ago"
               />
 
