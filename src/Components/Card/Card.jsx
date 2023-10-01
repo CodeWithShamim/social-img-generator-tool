@@ -14,7 +14,7 @@ export default function Card({ item }) {
         <h3 className="cardName">{name}</h3>
         <p className="cardComment">{comment}</p>
         <div className="cardBottomItem">
-          <h6>{getTimeAgo(daysAgo)}</h6>
+          <h6>{daysAgo}</h6>
 
           <ReactEffect>
             <button className="cardLikeBtn">like</button>
