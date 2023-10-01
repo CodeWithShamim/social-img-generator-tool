@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-export default function Card({ item }) {
+export default function Card({ item, handleDelete }) {
   const { img, name, comment, daysAgo, likeCounter, reacts } = item;
 
   return (
@@ -11,10 +11,19 @@ export default function Card({ item }) {
       </div>
 
       <div className="cardItem">
-        <div className="content">
-          <h3 className="cardName">{name}</h3>
-          <p className="cardComment">{comment}</p>
-          <button></button>
+        <div className="contentContainer">
+          <div className="content">
+            <h3 className="cardName">{name}</h3>
+            <p className="cardComment">{comment}</p>
+          </div>
+          <div>
+            <img
+              className="delete-button "
+              src={require("../../assets/delete.png")}
+              alt="delete-btn"
+              onClick={() => handleDelete(item)}
+            />
+          </div>
         </div>
 
         <div className="cardBottomItem">

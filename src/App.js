@@ -16,13 +16,20 @@ function App() {
     console.log(usersInput);
   };
 
+  console.log({ usersInput });
+
+  const handleDelete = (item) => {
+    const newUsersInput = usersInput?.filter((ui) => ui?.id !== item.id);
+    setUsersInput(newUsersInput);
+  };
+
   return (
     <div>
       <SubmitForm userInput={fromSubmitHandler} />
 
       <div className="userInputContainer">
         {usersInput?.map((item) => (
-          <Card item={item} />
+          <Card item={item} handleDelete={handleDelete} />
         ))}
       </div>
     </div>
