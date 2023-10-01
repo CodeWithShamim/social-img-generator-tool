@@ -1,0 +1,34 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0 auto;
+	width: 1200px;
+	max-width: 100%;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+}
+
+.userInputContainer {
+    margin: 10px auto;
+    width: 50%;
+    padding: 1ch;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .userInputContainer {
+        width: 80%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .userInputContainer {
+        width: 90%; 
+        padding: 0.5ch; 
+    }
+}
