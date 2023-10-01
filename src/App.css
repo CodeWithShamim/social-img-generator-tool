@@ -1,13 +1,14 @@
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
+
 body {
-	margin: 0 auto;
-	width: 1200px;
-	max-width: 100%;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	/* position: absolute;
+    margin: 0 auto;
+    width: 1200px;
+    max-width: 98%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    /* position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%); */
@@ -22,13 +23,14 @@ body {
 
 @media (max-width: 768px) {
     .userInputContainer {
-        width: 80%; 
+        width: 80%;
+        margin: 0px;
     }
 }
 
 @media (max-width: 480px) {
     .userInputContainer {
-        width: 90%; 
-        padding: 0.5ch; 
+        width: 90%;
+        margin: 0px;
     }
 }

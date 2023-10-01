@@ -82,12 +82,14 @@ const SubmitForm = (props) => {
         <div className="formContainer">
           {/* left item  */}
           <div className="leftItem">
-            <img
-              onClick={() => fileRef?.current?.click()}
-              className="boxShadow"
-              src={file}
-              alt=""
-            ></img>
+            <div>
+              <img
+                onClick={() => fileRef?.current?.click()}
+                className="boxShadow"
+                src={file}
+                alt=""
+              ></img>
+            </div>
             <div className="btnDiv">
               <button
                 className="btn"

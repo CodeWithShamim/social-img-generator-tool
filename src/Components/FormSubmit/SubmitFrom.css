@@ -7,6 +7,7 @@
     background-color: #000000;
     padding: 16px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .leftItem {
@@ -19,12 +20,6 @@
     width: 100%;
     justify-content: flex-start;
     text-align: center;
-}
-
-.card {
-    margin: 0 auto;
-    width: 80%;
-    padding: 1ch;
 }
 
 
@@ -149,28 +144,26 @@ textarea:focus {
 @media (max-width: 768px) {
     .formContainer {
         flex-direction: column;
-    }
-
-    .card {
-        width: 90%;
+        margin-top: 0px;
     }
 }
 
 @media (max-width: 480px) {
     .formContainer {
         flex-direction: column;
+        margin-top: 0px;
     }
 
-    .card {
+    .leftItem {
         width: 100%;
-        padding: 0.5ch;
     }
 
-    div .card .leftItem img {
+    .rightItem {
+        width: 100%;
+    }
+
+    .leftItem img {
         height: 100px;
         width: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        /* background: #dfdfdf; */
     }
 }
