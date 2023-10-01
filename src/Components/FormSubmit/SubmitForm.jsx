@@ -46,7 +46,7 @@ const SubmitForm = (props) => {
       img: file,
       name,
       comment,
-      daysAgo: new Date(),
+      daysAgo,
       likeCounter,
       ...reacts,
     };
@@ -56,7 +56,7 @@ const SubmitForm = (props) => {
     setName("");
     setComment("");
     setLikeCounter("");
-    // setDaysAgo("");
+    setDaysAgo("");
   };
 
   return (
