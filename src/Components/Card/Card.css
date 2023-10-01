@@ -11,7 +11,7 @@
 }
 
 .cardSection {
-    width: 70%;
+    width: 100%;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -27,6 +27,7 @@
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .cardComment {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
@@ -53,7 +54,7 @@
 
 @media (max-width: 768px) {
     .cardSection {
-        width: 70%; 
+        width: 70%;
     }
 
     .cardBottomItem {
@@ -64,7 +65,7 @@
 
 @media (max-width: 480px) {
     .cardSection {
-        width: 60%; 
+        width: 60%;
     }
 
     .cardBottomItem {

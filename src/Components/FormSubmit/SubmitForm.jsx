@@ -15,7 +15,7 @@ const SubmitForm = (props) => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [likeCounter, setLikeCounter] = useState("");
-  // const [daysAgo, setDaysAgo] = useState("");
+  const [daysAgo, setDaysAgo] = useState("");
 
   const fileRef = useRef();
 
@@ -65,19 +65,25 @@ const SubmitForm = (props) => {
         <ReactAction onClick={ModalHandler} reactData={onClickDone} />
       )} */}
       <form onSubmit={onSubmitHandler}>
-        <div className="">
-          <div className="imageWrap">
-            <img className="boxShadow" src={file} alt=""></img>
-          </div>
-
-          <div className="inputContainer">
-            <button
-              className="btn"
-              type="button"
+        <div className="formContainer">
+          {/* left item  */}
+          <div className="leftItem">
+            <img
               onClick={() => fileRef?.current?.click()}
-            >
-              Choose File
-            </button>
+              className="boxShadow"
+              src={file}
+              alt=""
+            ></img>
+            <div className="btnDiv">
+              <button
+                className="btn"
+                type="button"
+                onClick={() => fileRef?.current?.click()}
+              >
+                Choose File
+              </button>
+            </div>
+
             <input
               type="file"
               id="fileInput"
@@ -86,38 +92,44 @@ const SubmitForm = (props) => {
               onChange={handleChange}
               accept="image/*"
             />
-
-            <TextInput
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              placeholder="title"
-            />
-
-            <TextInput
-              onChange={(e) => setLikeCounter(e.target.value)}
-              value={likeCounter}
-              placeholder="likes"
-            />
-
-            <textarea
-              onChange={(e) => setComment(e.target.value)}
-              value={comment}
-              placeholder="comments"
-            />
-
-            {/* <TextInput
-              onChange={(e) => setDaysAgo(e.target.value)}
-              value={daysAgo}
-              placeholder="time"
-            /> */}
           </div>
 
-          <div className="btnContainer">
-            {/* <Button text="Add React" onClick={ModalHandler} color="#EA250B" /> */}
-            <ReactEffect>
-              <Button text="Add React" color="#EA250B" />
-            </ReactEffect>
-            <Button text="Submit" type="submit" />
+          {/* right item  */}
+          <div className="rightItem">
+            <div className="inputContainer">
+              <TextInput
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                placeholder="Profile name"
+              />
+
+              <TextInput
+                onChange={(e) => setLikeCounter(e.target.value)}
+                value={likeCounter}
+                placeholder="Total likes"
+              />
+
+              <TextInput
+                onChange={(e) => setDaysAgo(e.target.value)}
+                value={daysAgo}
+                type="date"
+                placeholder="Days ago"
+              />
+
+              <textarea
+                onChange={(e) => setComment(e.target.value)}
+                value={comment}
+                placeholder="Write comments"
+              />
+            </div>
+
+            <div className="btnContainer">
+              {/* <Button text="Add React" onClick={ModalHandler} color="#EA250B" /> */}
+              <ReactEffect>
+                <Button text="Add React" color="#EA250B" />
+              </ReactEffect>
+              <Button text="Submit" type="submit" />
+            </div>
           </div>
         </div>
       </form>
