@@ -6,28 +6,39 @@ export default function Card({ item }) {
 
   return (
     <div className="cardContainer">
-      <img className="cardImg" src={img} alt={name} />
+      <div>
+        <img className="cardImg" src={img} alt={name} />
+      </div>
 
-      <div className="cardSection">
-        <h3 className="cardName">{name}</h3>
-        <p className="cardComment">{comment}</p>
+      <div className="cardItem">
+        <div className="content">
+          <h3 className="cardName">{name}</h3>
+          <p className="cardComment">{comment}</p>
+          <button></button>
+        </div>
+
         <div className="cardBottomItem">
-          <h6>{daysAgo} days ago</h6>
-          <h6>{likeCounter} likes</h6>
+          <div className="cardBottomRightItem">
+            <div className="reactImgContainer">
+              {reacts.map((react, index) => (
+                <div key={index}>
+                  <img
+                    className="reactImg"
+                    src={require(`../../assets/${react}.png`)}
+                    alt={react}
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="likeCounter">{likeCounter}</p>
+          </div>
 
-          <div className="reactImgContainer">
-            {reacts.map((react, index) => (
-              <div key={index}>
-                <img
-                  className="reactImg"
-                  src={require(`../../assets/${react}.png`)}
-                  alt={react}
-                />
-              </div>
-            ))}
+          <div className="cardBottomLeftItem">
+            <p>Me gusta</p>
+            <p>Responder</p>
+            <p>{daysAgo} min</p>
           </div>
         </div>
-        <button></button>
       </div>
     </div>
   );
