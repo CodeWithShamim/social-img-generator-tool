@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import React from 'react'
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./SubmitFrom.css";
 import ReactAction from "../UI/ReactAction";
 import TextInput from "../TextInput";
@@ -16,6 +16,8 @@ const SubmitForm = (props) => {
   const [comment, setComment] = useState("");
   const [likeCounter, setLikeCounter] = useState("");
   // const [daysAgo, setDaysAgo] = useState("");
+
+  const fileRef = useRef();
 
   function handleChange(event) {
     if (event.target?.files[0]) {
@@ -49,6 +51,7 @@ const SubmitForm = (props) => {
       ...reacts,
     };
     props.userInput(input);
+    fileRef.current.value = null;
     setFile("");
     setName("");
     setComment("");
@@ -68,7 +71,22 @@ const SubmitForm = (props) => {
           </div>
 
           <div className="inputContainer">
-            <TextInput type="file" onChange={handleChange} />
+            <button
+              className="btn"
+              type="button"
+              onClick={() => fileRef?.current?.click()}
+            >
+              Choose File
+            </button>
+            <input
+              type="file"
+              id="fileInput"
+              class="file-input"
+              ref={fileRef}
+              onChange={handleChange}
+              accept="image/*"
+            />
+
             <TextInput
               onChange={(e) => setName(e.target.value)}
               value={name}
